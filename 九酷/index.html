@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="btn-wrap">
+			<button>按我</button>
+		</div>
+	</div>
+	
+</body>
+
+
+<script>
+	var e = sel => document.querySelector(sel)
+
+	var log = console.log.bind(console)
+
+	
+
+	var bindEvent = function(element, e_name, e_func) {
+		element.addEventListener(e_name, function() {
+			e_func()
+		}, false)
+	}
+</script>
+<script>
+	var bind_btn_events = function() {
+		var btn = e('button')
+
+		var btn_event = function(event) {
+			log('clicked')
+		}
+		
+		bindEvent(btn, 'click', btn_event)
+	}
+</script>
+<script>
+	var bindEvents = function() {
+		bind_btn_events()
+	}
+
+	var __main = function() {
+		bindEvents()
+	}
+	__main()
+</script>
+</html>

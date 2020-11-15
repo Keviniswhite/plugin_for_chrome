@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "jqku_url",
+    "description": "jqku",
+    "version": "1.0",
+    "content_scripts": [{
+        "matches": ["*://*.9ku.com/play/*"],
+        "js": ["jqku.js","main.js"],
+        "run_at": "document_start"
+      }
+    ],
+    "permissions": [
+        "storage",
+        "activeTab",
+        "tabs",
+        "*://*.9ku.com/*",
+        "https://ajax.googleapis.com/"
+      ],
+      "web_accessible_resources": [
+        "*.css",
+        "*.js"
+      ]
+}
